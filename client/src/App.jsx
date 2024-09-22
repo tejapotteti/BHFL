@@ -20,7 +20,7 @@ function App() {
 
     try {
       const parsedInput = JSON.parse(input);
-      const res = await axios.post("bhflbackend-production.up.railway.app/bfhl", parsedInput);
+      const res = await axios.post("https://bhflbackend-production.up.railway.app/bfhl", parsedInput);
       setResponse(res.data);
     } catch (err) {
       if (err instanceof SyntaxError) {
