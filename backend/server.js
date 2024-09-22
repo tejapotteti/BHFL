@@ -4,7 +4,14 @@ const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json({ limit: '10mb' }));
-app.use(cors());
+
+// CORS configuration
+const corsOptions = {
+  origin: 'https://bhflbackend-production.up.railway.app',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 
 const USER_ID = "john_doe_17091999";
 const EMAIL = "john@xyz.com";
